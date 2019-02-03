@@ -1,0 +1,342 @@
+using System;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LISTA2
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{	/*Declaracao de variavel do Menu Principal - int e String*/
+			int questao, contadorGeral = 1;
+			string respostaGeral;
+			/*Condicao Repeticao para que o usuario retorne ao inicio do menu caso queira */
+			while (contadorGeral < 100)
+			{
+
+				Console.WriteLine("----------------------------------------------------------------");
+				Console.WriteLine(" ");
+				Console.WriteLine("LISTA 2 - EXERCÍCIOS");
+				Console.WriteLine(" ");
+				Console.WriteLine("( 1 ) - Soma de dois números informados, multiplicando o resultado pelo primeiro número.");
+				Console.WriteLine("( 2 ) - Calculo da média de 5 notas de um aluno.");
+				Console.WriteLine("( 3 ) - Calculo de estoque médio de uma peça");
+				Console.WriteLine("( 4 ) - Cálculo de Média Anual de um aluno e se está aprovado ou reprovado.");
+				Console.WriteLine("( 5 ) - Orçamento de uma festa Infantil");
+				Console.WriteLine("( 6 ) - RH - Tempo de experiência Profissional x Nível de Candidato");
+				Console.WriteLine("( 7 ) - Calculo de Média Anual de um aluno, se reprovado, aprovado ou recuperação");
+				Console.WriteLine("( 8 ) - Média de Anual de uma Classe e status de Aprovação");
+				Console.WriteLine(" ");
+				Console.WriteLine("----------------------------------------------------------------");
+				Console.WriteLine(" ");
+				Console.WriteLine("Escolha uma das opções acima:");
+				questao = int.Parse(Console.ReadLine());
+				Console.Clear();
+
+				switch (questao)
+				{
+					case 1:
+						/*declaracao das variaveis do tipo inteiro*/
+						int numero1, numero2, resultado;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 1 ) - Soma de dois números informados, multiplicando o resultado pelo primeiro número.");
+						Console.WriteLine(" ");
+						/*Exibe mensagem na tela */
+						Console.WriteLine("Informe o 1º numero:");
+
+						/*Le e converte de texto para numero inteiro aplicando assim na variavel declarada*/
+						numero1 = Convert.ToInt32(Console.ReadLine());
+
+						/*Exibe mensagem na tela */
+						Console.WriteLine("Informe o 2º numero");
+
+						/*Le e converte de texto para numero inteiro aplicando assim na variavel declarada*/
+						numero2 = Convert.ToInt32(Console.ReadLine());
+
+						/*aplica a variavel 'resultado', uma operação matematica com os numeros informados  */
+						resultado = (numero1 + numero2) * numero1;
+						Console.WriteLine("");
+						/*Exibe na tela o conteudo da variavel resultado */
+						Console.WriteLine("O Resultado é " + resultado);
+						break;
+					case 2:
+						/*declarar das variaveis do tipo double */
+						double nota1, nota2, nota3, nota4, nota5, media;
+						/*Declacao da variavel do tipo string (texto) */
+						string nomeAluno;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 2 ) - Calculo da média de 5 notas de um aluno.");
+						Console.WriteLine(" ");
+						/*exibe a mensagem, solicita ao usuario o nome do aluno e atribui a variavel nomeAluno */
+						Console.WriteLine("Informe o nome do Aluno:");
+						nomeAluno = Console.ReadLine();
+
+						/*exibe a mensagem, solicita ao usuario uma nota e atribui a variavel da nota correspondente */
+						Console.WriteLine("Informe a 1ª nota:");
+						nota1 = Convert.ToDouble(Console.ReadLine());
+
+						Console.WriteLine("Informe a 2ª nota:");
+						nota2 = Convert.ToDouble(Console.ReadLine());
+
+						Console.WriteLine("Informe a 3ª nota:");
+						nota3 = Convert.ToDouble(Console.ReadLine());
+
+						Console.WriteLine("Informe a 4ª nota:");
+						nota4 = Convert.ToDouble(Console.ReadLine());
+
+						Console.WriteLine("Informe a 5ª nota:");
+						nota5 = Convert.ToDouble(Console.ReadLine());
+
+						/*Atribui a variavel media, a operacao de calculo da media de todas as notas informadas pelo usuario */
+						media = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
+
+						/*Exibe ao usuario uma Mensagem amigavel do nome do Aluno informado e sua media final */
+						Console.WriteLine("A media do " + nomeAluno + " é " + media + "!");
+						break;
+					case 3:
+						/*Declaracao da variavel do tipo double */
+						double qtdadeMin, qtdadeMax, estoqueMedio;
+						/*declaracao da variavel do tipo string (texto) */
+						string peca;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 3 ) - Calculo de estoque médio de uma peça");
+						Console.WriteLine(" ");
+						/*Exibe Mensagem solicitando o nome da peca e le texto para atribuir a a variavel 'peca' */
+						Console.WriteLine("Informe o nome da peca:");
+						peca = Console.ReadLine();
+
+						Console.WriteLine(" ");
+
+						/*Exibe mensagem solicitando a menor quantidade da peca convertendo o texto em tipo double para atribuindo a variavel correspondente */
+						Console.WriteLine("Informe a menor quantidade desta peça em estoque:");
+						qtdadeMin = Convert.ToDouble(Console.ReadLine());
+
+						Console.WriteLine(" ");
+
+						Console.WriteLine("Informe a maior quantidade desta peça em Estoque:");
+						qtdadeMax = Convert.ToDouble(Console.ReadLine());
+
+						/*realiza o calculo de media das quantidades informadas pelo usuario, atribuindo valor a variavel 'estoqueMedio' */
+						estoqueMedio = (qtdadeMin + qtdadeMax) / 2;
+
+						Console.WriteLine(" ");
+						/*Exibe mensagem amigavel ao final informando o nome da peca e o estoque medio da mesma */
+						Console.WriteLine("O estoque médio de '" + peca + " foi de " + estoqueMedio + "!");
+						break;
+					case 4:
+						/*declarar das variaveis do tipo double */
+						double ex4Nota1, ex4Nota2, ex4Nota3, ex4Nota4, ex4Media;
+						/*Declacao da variavel do tipo string (texto) */
+						string ex4NomeAluno;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 4 ) - Cálculo de Média Anual de um aluno e se está aprovado ou reprovado.");
+						Console.WriteLine(" ");
+						/*exibe a mensagem, solicita ao usuario o nome do aluno e atribui a variavel nomeAluno */
+						Console.WriteLine("Informe o nome do Aluno:");
+						ex4NomeAluno = Console.ReadLine();
+
+						/*exibe a mensagem, solicita ao usuario uma nota e atribui a variavel da nota correspondente */
+						Console.WriteLine("Informe a 1ª nota:");
+						ex4Nota1 = Convert.ToDouble(Console.ReadLine());
+
+						Console.WriteLine("Informe a 2ª nota:");
+						ex4Nota2 = Convert.ToDouble(Console.ReadLine());
+
+						Console.WriteLine("Informe a 3ª nota:");
+						ex4Nota3 = Convert.ToDouble(Console.ReadLine());
+
+						Console.WriteLine("Informe a 4ª nota:");
+						ex4Nota4 = Convert.ToDouble(Console.ReadLine());
+
+						/*Atribui a variavel media, a operacao de calculo da media de todas as notas informadas pelo usuario */
+						ex4Media = (ex4Nota1 + ex4Nota2 + ex4Nota3 + ex4Nota4) / 4;
+
+						/*verificar se aluno atingiu a media desejada e apresentar o resultado se aprovado ou reprovado*/
+						if (ex4Media > 5)
+						{
+							Console.WriteLine("A media do " + ex4NomeAluno + " é " + ex4Media + " e ele está APROVADO!");
+						}
+						else
+						{
+							Console.WriteLine("A media do " + ex4NomeAluno + " é " + ex4Media + " e ele está REPROVADO!");
+						}
+						break;
+					case 5:
+						/*declarar das variaveis do tipo double */
+						int convidados;
+						double valor;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 5 ) - Orçamento de uma festa Infantil");
+						Console.WriteLine(" ");
+						Console.WriteLine("Informe a quantidade de pessoas convidadas:");
+						convidados = int.Parse(Console.ReadLine());
+
+						if (convidados >= 100)
+						{
+							valor = (Double)convidados * 45.00;
+							Console.WriteLine("O valor Total para " + convidados + " Convidados é de R$ " + valor.ToString("F2", CultureInfo.InvariantCulture));
+						}
+						else
+						{
+							valor = (Double)convidados * 35.00;
+							Console.WriteLine("O valor Total para " + convidados + " Convidados é de R$ " + valor.ToString("F2", CultureInfo.InvariantCulture));
+						}
+						break;
+					case 6:
+						/*declarar das variaveis do tipo double */
+						double experiencia;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 6 ) - RH - Tempo de experiência Profissional x Nível de Candidato");
+						Console.WriteLine(" ");
+						Console.WriteLine("Informe o tempo de experiência do candidato em anos:");
+						experiencia = Double.Parse(Console.ReadLine());
+						/*Condição Se*/
+						if (experiencia < 2)
+						{
+							Console.WriteLine("O nível do candidato é Júnior!");
+						}
+						else if (experiencia < 5)
+						{
+							Console.WriteLine("O nível do candidato é Pleno!");
+						}
+						else
+						{
+							Console.WriteLine("O nível do candidato é Sênior!");
+						}
+						break;
+					case 7:
+						/*declarar das variaveis do tipo double */
+						double ex7Nota1, ex7Nota2, ex7Nota3, ex7Nota4, ex7Media, ex7Faltas;
+						/*Declacao da variavel do tipo string (texto) */
+						string ex7NomeAluno;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 7 ) - Calculo de Média Anual de um aluno, se reprovado, aprovado ou recuperação");
+						Console.WriteLine(" ");
+						/*exibe a mensagem, solicita ao usuario o nome do aluno e atribui a variavel nomeAluno */
+						Console.WriteLine("Informe o nome do Aluno:");
+						ex7NomeAluno = Console.ReadLine();
+
+						/*exibe a mensagem, solicita ao usuario uma nota e atribui a variavel da nota correspondente */
+						Console.WriteLine("Informe a 1ª nota:");
+						ex7Nota1 = Convert.ToDouble(Console.ReadLine());
+
+						Console.WriteLine("Informe a 2ª nota:");
+						ex7Nota2 = Convert.ToDouble(Console.ReadLine());
+
+						Console.WriteLine("Informe a 3ª nota:");
+						ex7Nota3 = Convert.ToDouble(Console.ReadLine());
+
+						Console.WriteLine("Informe a 4ª nota:");
+						ex7Nota4 = Convert.ToDouble(Console.ReadLine());
+
+						Console.WriteLine("Informe o número de faltas:");
+						ex7Faltas = Convert.ToDouble(Console.ReadLine());
+
+						/*Atribui a variavel media, a operacao de calculo da media de todas as notas informadas pelo usuario */
+						ex7Media = (ex7Nota1 + ex7Nota2 + ex7Nota3 + ex7Nota4) / 4;
+
+						/*verificar se aluno atingiu a media desejada e apresentar o resultado se aprovado ou reprovado*/
+						if (ex7Faltas > 10)
+						{
+							Console.WriteLine("O aluno " + ex7NomeAluno + "está REPROVADO!");
+						}
+						else if (ex7Media < 5)
+						{
+							Console.WriteLine("A media do " + ex7NomeAluno + " é " + ex7Media + " , e ele está de Recuperação!");
+						}
+						else
+						{
+							Console.WriteLine("A media do " + ex7NomeAluno + " é " + ex7Media + " , e ele está APROVADO!");
+						}
+						break;
+					case 8:
+						/*declarar das variaveis do tipo double */
+						double ex8Nota1, ex8Nota2, ex8Nota3, ex8Nota4, ex8Media;
+						/*Declacao da variavel do tipo string (texto) */
+						string ex8NomeAluno;
+						/*Declaracao da variavel do tipo inteiro*/
+						int ex8Alunos, ex8Contador = 0;
+
+						Console.WriteLine("----------------------------------------------------------------");
+						Console.WriteLine(" ");
+						Console.WriteLine("( 8 ) - Média de Anual de uma Classe e status de Aprovação");
+						Console.WriteLine(" ");
+
+						/*Questionar a quantidade de Alunos da classe*/
+						Console.WriteLine("Informe a Quantidade de Alunos:");
+						ex8Alunos = int.Parse(Console.ReadLine());
+
+						while (ex8Contador < ex8Alunos)
+						{
+
+							/*exibe a mensagem, solicita ao usuario o nome do aluno e atribui a variavel nomeAluno */
+							Console.WriteLine("Informe o nome do Aluno:");
+							ex8NomeAluno = Console.ReadLine();
+
+							/*exibe a mensagem, solicita ao usuario uma nota e atribui a variavel da nota correspondente */
+							Console.WriteLine("Informe a 1ª nota:");
+							ex8Nota1 = Convert.ToDouble(Console.ReadLine());
+
+							Console.WriteLine("Informe a 2ª nota:");
+							ex8Nota2 = Convert.ToDouble(Console.ReadLine());
+
+							Console.WriteLine("Informe a 3ª nota:");
+							ex8Nota3 = Convert.ToDouble(Console.ReadLine());
+
+							Console.WriteLine("Informe a 4ª nota:");
+							ex8Nota4 = Convert.ToDouble(Console.ReadLine());
+
+							/*Atribui a variavel media, a operacao de calculo da media de todas as notas informadas pelo usuario */
+							ex8Media = (ex8Nota1 + ex8Nota2 + ex8Nota3 + ex8Nota4) / 4;
+
+							/*verificar se aluno atingiu a media desejada e apresentar o resultado se aprovado ou reprovado*/
+							if (ex8Media > 5)
+							{
+								Console.WriteLine("A media do " + ex8NomeAluno + " é " + ex8Media + " , e ele está APROVADO!");
+							}
+							else
+							{
+								Console.WriteLine("A media do " + ex8NomeAluno + " é " + ex8Media + " , e ele está REPROVADO!");
+							}
+							ex8Contador++;
+						}
+						break;
+				} /*Fim do Switch*/
+				Console.WriteLine(" ");
+				Console.WriteLine("----------------------------------------");
+				Console.WriteLine(" ");
+				Console.WriteLine("Para continuar pressione qualquer tecla!");
+				Console.ReadKey();
+				Console.Clear();
+				Console.WriteLine("Deseja Voltar para o início e escolher outra opção? (S / N)");
+				respostaGeral = Console.ReadLine();
+				/*if para ação se usuario deseja retornar ao Menu Principal*/
+				if (respostaGeral == "S")
+				{
+					contadorGeral++;
+				}else{
+					contadorGeral = 101;
+				}
+				Console.Clear();
+
+			} /*Fim While geral*/
+
+		}
+	}
+}
